@@ -2708,6 +2708,1426 @@ spawn(function()
         end
     end)
     local localfrag = W:AddLabel("Fragment")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localfrag:Set("Fragments :".." "..game:GetService("Players").LocalPlayer.Data.Fragments.Value)
+            end)
+        end
+    end)
+    
+    
+    local localexp = W:AddLabel("ExP")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localexp:Set("ExP Points :".." "..game:GetService("Players").LocalPlayer.Data.Exp.Value)
+            end)
+        end
+    end)
+    
+    local localstat = W:AddLabel("Stats Points")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localstat:Set("Stats Points :".." "..game:GetService("Players").LocalPlayer.Data.Points.Value)
+            end)
+        end
+    end)
+    
+    local localbountyhornor = W:AddLabel("Bounty")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbountyhornor:Set("Bounty / Honor :".." "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
+            end)
+        end
+    end)
+    
+    local localDevil = W:AddLabel("Devil Fruit")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) then
+                    localDevil:Set("Devil Fruit :".." "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
+                else
+                    localDevil:Set("Not Have Devil Fruit")
+                end
+            end)
+        end
+    end)
+
+    local Section = W:AddSection({
+        Name = "Status Hack"
+    })
+    
+    local LevelFarmFarm W:AddLabel("Kaitun: Coming Soon")
+    W:AddLabel("Config Save : Comming Son...")
+    local Farmfast = W:AddLabel("Farm Fast : ❌")
+    local Bypass = W:AddLabel("Bypass ❌")
+    local Section = W:AddSection({
+        Name = "World"
+    })
+    local WolrdSet3 = W:AddLabel("World 1 ❌ ")
+    local WolrdSet = W:AddLabel("Wolrd : 2 ❌")
+    local WolrdSet1 = W:AddLabel("Wolrd : 3 ❌")
+    local Section = W:AddSection({
+        Name = "Stats Point"
+    })
+    local StastMelee = W:AddLabel("")
+    local StastDefense = W:AddLabel("")
+    local StastSword = W:AddLabel("")
+    local StastGun = W:AddLabel("")
+    local StastDevilFruit = W:AddLabel("")
+    local PointsStast = W:AddLabel("")
+    local Section = W:AddSection({
+        Name = "Melee Check"
+    })
+    local  Superhuman =             W:AddLabel("❌ : Superhuman")
+    local  DeathStep =              W:AddLabel("❌ : Sharkman Karate")
+    local  ElectricClaw =             W:AddLabel("❌ : Electric Claw")
+    local  DragonTalon =             W:AddLabel("❌ : Dragon Talon")
+    local   GodHuman =            W:AddLabel("❌ : God Human")
+    local Section = W:AddSection({
+        Name = "Sword Legend Check"
+    })
+    local   Shisui =            W:AddLabel("❌ : Shisui")
+    local     Saddi =           W:AddLabel("❌ : Saddi")
+    local      Wando =         W:AddLabel("❌ : Wando")
+    local     TrueTripleKatana          W:AddLabel("❌ : True Triple Katana")
+    local Section = W:AddSection({
+        Name = "World 1 Weapon"
+    })
+    local   Saber  = W:AddLabel("❌ : Saber")
+    local Section = W:AddSection({
+        Name = "World 2 Weapon"
+    })
+    local       Rengoku =         W:AddLabel("❌ : Rengoku")
+    local    MidnightBlade =            W:AddLabel("❌ : Midnight Blade")
+    local       DragonTrident =        W:AddLabel("❌ : DragonTrident")
+    local Section = W:AddSection({
+        Name = "World 3 Weapon"
+    })
+    local     Yama =          W:AddLabel("❌ : Yama")
+    local        BuddySword =        W:AddLabel("❌ : Buddy Sword")
+    local       Canvander =        W:AddLabel("❌ : Canvander")
+    local      TwinHooks =         W:AddLabel("❌ : Twin Hooks")
+    local     SpikeyTrident =          W:AddLabel("❌ : Spikey Trident")
+    local   HallowScythe =            W:AddLabel("❌ : Hallow Scythe")
+    local     DarkDagger =           W:AddLabel("❌ : Dark Dagger")
+    local     Tushita          W:AddLabel("❌ : Tushita")
+    local Section = W:AddSection({
+        Name = "Gun"
+    })
+    local   Kabucha =            W:AddLabel("❌ : Kabucha")
+    local   AcidumRifle =             W:AddLabel("❌ : Acidum Rifle")
+    local    BizarreRifle =            W:AddLabel("❌ : Bizarre Rifle")
+    local Section = W:AddSection({
+        Name = "Quest"
+    })
+    local   BartiloQuest =            W:AddLabel("❌ : Bartilo Quest")
+    local   DonSwanQuest =             W:AddLabel("❌ : Don Swan Quest")
+    local    KillDonSwan =           W:AddLabel("❌ : Kill Don Swan")
+
+
+local Section = W:AddSection({
+    Name = "Acessory"
+})
+
+
+local Dark_Coat = W:AddLabel("❌: Dark Coat")
+local Ghoul_Mask = W:AddLabel("❌: Ghoul Mask")
+local Swan_Glass = W:AddLabel("❌: Swan Glass")
+local Pale_Scarf = W:AddLabel("❌: Pale Scarf")
+local Valkyrie_Helm = W:AddLabel("❌: Valkyrie Helm")
+
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+                if v.Name == "Saber" then
+                    Dark_Coat:Set("✅: Dark Coat")
+                end
+                if v.Name == "Ghoul Mask" then
+                    Ghoul_Mask:Set("✅: Ghoul Mask")
+                end
+                if v.Name == "Swan Glasses" then
+                    Swan_Glass:Set("✅: Swan Glass")
+                end
+                if v.Name == "Pale Scarf" then
+                    Pale_Scarf:Set("✅: Pale Scarf")
+                end
+                if v.Name == "Valkyrie Helmet" then
+                    Valkyrie_Helm:Set("✅: Valkyrie Helmet")
+                end
+            end
+        end)
+    end
+end)
+
+local Section = M:AddSection({
+    Name = "Select Weapon"
+})
+
+M:AddParagraph("Select Weapon","Please Select Weapon")
+
+local WeaponList = {"Melee","Sword","Fruit","Gun"}
+_G.SelectWeapon = "Melee"
+M:AddDropdown({
+    Name = "Select Weapon",
+    Default = "",
+    Options = WeaponList,
+    Flag = "Select Weapon",
+    Save = true,
+    Callback = function(Value)
+        _G.SelectWeapon = Value
+    end    
+})
+task.spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.SelectWeapon == "Melee" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Melee" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Sword" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Sword" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Gun" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Gun" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Fruit" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Blox Fruit" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            end
+        end)
+    end
+    end)
+
+if World2 and World1 then
+    local Section = M:AddSection({
+        Name = "BOOTS"
+    })
+    local localrace = W:AddLabel("Race")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localrace:Set("Race :".." "..game:GetService("Players").LocalPlayer.Data.Race.Value)
+            end)
+        end
+    end)
+    
+    local localbeli = W:AddLabel("Beli")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbeli:Set("Beli :".." "..game:GetService("Players").LocalPlayer.Data.Beli.Value)
+            end)
+        end
+    end)
+    local localfrag = W:AddLabel("Fragment")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localfrag:Set("Fragments :".." "..game:GetService("Players").LocalPlayer.Data.Fragments.Value)
+            end)
+        end
+    end)
+    
+    
+    local localexp = W:AddLabel("ExP")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localexp:Set("ExP Points :".." "..game:GetService("Players").LocalPlayer.Data.Exp.Value)
+            end)
+        end
+    end)
+    
+    local localstat = W:AddLabel("Stats Points")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localstat:Set("Stats Points :".." "..game:GetService("Players").LocalPlayer.Data.Points.Value)
+            end)
+        end
+    end)
+    
+    local localbountyhornor = W:AddLabel("Bounty")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbountyhornor:Set("Bounty / Honor :".." "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
+            end)
+        end
+    end)
+    
+    local localDevil = W:AddLabel("Devil Fruit")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) then
+                    localDevil:Set("Devil Fruit :".." "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
+                else
+                    localDevil:Set("Not Have Devil Fruit")
+                end
+            end)
+        end
+    end)
+
+    local Section = W:AddSection({
+        Name = "Status Hack"
+    })
+    
+    local LevelFarmFarm W:AddLabel("Kaitun: Coming Soon")
+    W:AddLabel("Config Save : Comming Son...")
+    local Farmfast = W:AddLabel("Farm Fast : ❌")
+    local Bypass = W:AddLabel("Bypass ❌")
+    local Section = W:AddSection({
+        Name = "World"
+    })
+    local WolrdSet3 = W:AddLabel("World 1 ❌ ")
+    local WolrdSet = W:AddLabel("Wolrd : 2 ❌")
+    local WolrdSet1 = W:AddLabel("Wolrd : 3 ❌")
+    local Section = W:AddSection({
+        Name = "Stats Point"
+    })
+    local StastMelee = W:AddLabel("")
+    local StastDefense = W:AddLabel("")
+    local StastSword = W:AddLabel("")
+    local StastGun = W:AddLabel("")
+    local StastDevilFruit = W:AddLabel("")
+    local PointsStast = W:AddLabel("")
+    local Section = W:AddSection({
+        Name = "Melee Check"
+    })
+    local  Superhuman =             W:AddLabel("❌ : Superhuman")
+    local  DeathStep =              W:AddLabel("❌ : Sharkman Karate")
+    local  ElectricClaw =             W:AddLabel("❌ : Electric Claw")
+    local  DragonTalon =             W:AddLabel("❌ : Dragon Talon")
+    local   GodHuman =            W:AddLabel("❌ : God Human")
+    local Section = W:AddSection({
+        Name = "Sword Legend Check"
+    })
+    local   Shisui =            W:AddLabel("❌ : Shisui")
+    local     Saddi =           W:AddLabel("❌ : Saddi")
+    local      Wando =         W:AddLabel("❌ : Wando")
+    local     TrueTripleKatana          W:AddLabel("❌ : True Triple Katana")
+    local Section = W:AddSection({
+        Name = "World 1 Weapon"
+    })
+    local   Saber  = W:AddLabel("❌ : Saber")
+    local Section = W:AddSection({
+        Name = "World 2 Weapon"
+    })
+    local       Rengoku =         W:AddLabel("❌ : Rengoku")
+    local    MidnightBlade =            W:AddLabel("❌ : Midnight Blade")
+    local       DragonTrident =        W:AddLabel("❌ : DragonTrident")
+    local Section = W:AddSection({
+        Name = "World 3 Weapon"
+    })
+    local     Yama =          W:AddLabel("❌ : Yama")
+    local        BuddySword =        W:AddLabel("❌ : Buddy Sword")
+    local       Canvander =        W:AddLabel("❌ : Canvander")
+    local      TwinHooks =         W:AddLabel("❌ : Twin Hooks")
+    local     SpikeyTrident =          W:AddLabel("❌ : Spikey Trident")
+    local   HallowScythe =            W:AddLabel("❌ : Hallow Scythe")
+    local     DarkDagger =           W:AddLabel("❌ : Dark Dagger")
+    local     Tushita          W:AddLabel("❌ : Tushita")
+    local Section = W:AddSection({
+        Name = "Gun"
+    })
+    local   Kabucha =            W:AddLabel("❌ : Kabucha")
+    local   AcidumRifle =             W:AddLabel("❌ : Acidum Rifle")
+    local    BizarreRifle =            W:AddLabel("❌ : Bizarre Rifle")
+    local Section = W:AddSection({
+        Name = "Quest"
+    })
+    local   BartiloQuest =            W:AddLabel("❌ : Bartilo Quest")
+    local   DonSwanQuest =             W:AddLabel("❌ : Don Swan Quest")
+    local    KillDonSwan =           W:AddLabel("❌ : Kill Don Swan")
+
+
+local Section = W:AddSection({
+    Name = "Acessory"
+})
+
+
+local Dark_Coat = W:AddLabel("❌: Dark Coat")
+local Ghoul_Mask = W:AddLabel("❌: Ghoul Mask")
+local Swan_Glass = W:AddLabel("❌: Swan Glass")
+local Pale_Scarf = W:AddLabel("❌: Pale Scarf")
+local Valkyrie_Helm = W:AddLabel("❌: Valkyrie Helm")
+
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+                if v.Name == "Saber" then
+                    Dark_Coat:Set("✅: Dark Coat")
+                end
+                if v.Name == "Ghoul Mask" then
+                    Ghoul_Mask:Set("✅: Ghoul Mask")
+                end
+                if v.Name == "Swan Glasses" then
+                    Swan_Glass:Set("✅: Swan Glass")
+                end
+                if v.Name == "Pale Scarf" then
+                    Pale_Scarf:Set("✅: Pale Scarf")
+                end
+                if v.Name == "Valkyrie Helmet" then
+                    Valkyrie_Helm:Set("✅: Valkyrie Helmet")
+                end
+            end
+        end)
+    end
+end)
+
+local Section = M:AddSection({
+    Name = "Select Weapon"
+})
+
+M:AddParagraph("Select Weapon","Please Select Weapon")
+
+local WeaponList = {"Melee","Sword","Fruit","Gun"}
+_G.SelectWeapon = "Melee"
+M:AddDropdown({
+    Name = "Select Weapon",
+    Default = "",
+    Options = WeaponList,
+    Flag = "Select Weapon",
+    Save = true,
+    Callback = function(Value)
+        _G.SelectWeapon = Value
+    end    
+})
+task.spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.SelectWeapon == "Melee" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Melee" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Sword" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Sword" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Gun" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Gun" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Fruit" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Blox Fruit" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            end
+        end)
+    end
+    end)
+
+if World2 and World1 then
+    local Section = M:AddSection({
+        Name = "BOOTS"
+    })
+
+    M:AddButton({
+        Name = "BOOST FPS",
+        Callback = function()
+            pcall(function()
+                game:GetService("Lighting").FantasySky:Destroy()
+                local g = game
+                local w = g.Workspace
+                local l = g.Lighting
+                local t = w.Terrain
+                t.WaterWaveSize = 0
+                t.WaterWaveSpeed = 0
+                t.WaterReflectance = 0
+                t.WaterTransparency = 0
+                l.GlobalShadows = false
+                l.FogEnd = 9e9
+                l.Brightness = 0
+                settings().Rendering.QualityLevel = "Level01"
+                for i, v in pairs(g:GetDescendants()) do
+                    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
+                        v.Material = "Plastic"
+                        v.Reflectance = 0
+                    elseif v:IsA("Decal") or v:IsA("Texture") then
+                        v.Transparency = 1
+                    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+                        v.Lifetime = NumberRange.new(0)
+                    elseif v:IsA("Explosion") then
+                        v.BlastPressure = 1
+                        v.BlastRadius = 1
+                    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+                        v.Enabled = false
+                    elseif v:IsA("MeshPart") then
+                        v.Material = "Plastic"
+                        v.Reflectance = 0
+                        v.TextureID = 10385902758728957
+                    end
+                end
+                for i, e in pairs(l:GetChildren()) do
+                    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+                        e.Enabled = false
+                    end
+                end
+                for i, v in pairs(game:GetService("Workspace").Camera:GetDescendants()) do
+                    if v.Name == ("Water;") then
+                        v.Transparency = 1
+                        v.Material = "Plastic"
+                    end
+                end
+            end)
+          end    
+    })
+end
+
+    local Section = M:AddSection({
+        Name = "Other Farm"
+    })
+
+    M:AddParagraph("Redeem Code","Click to Button to Reddem All Code In Blox Fruits.")
+
+    local x2Code = {
+        "JULYUPDATE_RESET",
+        "staffbattle",
+        "Sub2CaptainMaui",
+        "SUB2GAMERROBOT_RESET1",
+        "KittGaming",
+        "Sub2Fer999",
+        "Enyu_is_Pro",
+        "Magicbus",
+        "ENYU_IS_PRO",
+        "FUDD10",
+        "BIGNEWS",
+        "THEGREATACE",
+        "SUB2GAMERROBOT_EXP1",
+        "STRAWHATMAIME",
+        "SUB2OFFICIALNOOBIE",
+        "SUB2NOOBMASTER123",
+        "SUB2DAIGROCK",
+        "AXIORE",
+        "TANTAIGAMIMG",
+        "STRAWHATMAINE",
+        "JCWK",
+        "FUDD10_V2",
+        "SUB2FER999",
+        "MAGICBIS",
+        "TY_FOR_WATCHING",
+        "STARCODEHEO"
+    }
+    
+    
+    
+    M:AddButton({
+        Name = "Redeem all code",
+        Callback = function()
+            function RedeemCode(value)
+                game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
+            end
+            for i,v in pairs(x2Code) do
+                RedeemCode(v)
+            end
+          end    
+    })
+
+    local Section = M:AddSection({
+        Name = "Auto Farm Level"
+    })
+
+
+M:AddParagraph("Main Farm","Click to Box to Farm, I ready update new mob farm!.")
+
+ToggleFarm = M:AddToggle({
+    Name = "Auto Farm",
+    Default = false,
+    Flag = "LevelFarm",
+    Save = true,
+    Callback = function(Value)
+        _G.AutoFarm = Value
+        StopTween(_G.AutoFarm)
+    end    
+})
+
+local Section = M:AddSection({
+    Name = "Mastery Menu"
+})
+
+M:AddParagraph("Mastery Menu","Click To Box to Start Farm Mastery")
+
+M:AddToggle({
+    Name = "Auto Farm BF Mastery",
+    Default = false,
+    Flag = "Mastery",
+    Save = true,
+    Callback = function(Value)
+        _G.AutoFarmFruitMastery = Value
+        StopTween(_G.AutoFarmFruitMastery)
+        if _G.AutoFarmFruitMastery == false then
+            UseSkill = false 
+        end
+    end    
+})
+
+M:AddToggle({
+    Name = "Auto Farm Gun Mastery",
+    Default = false,
+    Flag = "Gun Mastery",
+    Save = true,
+    Callback = function(Value)
+        _G.AutoFarmGunMastery = Value
+        StopTween(_G.AutoFarmGunMastery)
+    end    
+})
+
+    M:AddSlider({
+        Name = "Health Mob",
+        Min = 0,
+        Max = 100,
+        Default = 25,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "Health",
+        Flag = "Health Mob",
+        Save = true,
+        Callback = function(Value)
+            _G.Kill_At = Value
+        end    
+    })
+
+    M:AddToggle({
+        Name = "Skill Z",
+        Default = false,
+        Flag = "Skill Z",
+        Save = true,
+        Callback = function(Value)
+            _G.SkillZ = Value
+        end    
+    })
+
+    M:AddToggle({
+        Name = "Skill! X",
+        Default = false,
+        Default = false,
+        Flag = "Skill X",
+        Save = true,
+        Callback = function(Value)
+            _G.SkillX = Value
+        end    
+    })
+
+
+    M:AddToggle({
+        Name = "Skill C",
+        Default = false,
+        Default = false,
+        Flag = "Skill C",
+        Save = true,
+        Callback = function(Value)
+            _G.SkillC = Value
+        end    
+    })
+
+
+    M:AddToggle({
+        Name = "Skill V",
+        Default = false,
+        Default = false,
+        Flag = "Skill V",
+        Save = true,
+        Callback = function(Value)
+            _G.SkillV = Value
+        end    
+    })
+
+    M:AddToggle({
+        Name = "Skill F",
+        Default = false,
+        Default = false,
+        Flag = "Skill F",
+        Save = true,
+        Callback = function(Value)
+            _G.SkillF = Value
+        end    
+    })
+
+    local Section = M:AddSection({
+        Name = "Bring Mob"
+    })
+
+M:AddToggle({
+    Name = "Bring Mobs[Fix]",
+    Default = true,
+    Flag = "Bring Mobs",
+    Save = false,
+    Callback = function(Value)
+        _G.BringMonster = Value
+    end    
+})
+local Bring = {"Low", "Normal", "Super Bring"}
+_G.BringMode = "Normal"
+M:AddDropdown({
+    Name = "Bring Mode",
+    Default = "Normal",
+    Options = Bring,
+    Default = false,
+    Flag = "Bring Mode",
+    Save = true,
+    Callback = function(Value)
+        _G.BringMode = Value
+    end    
+})
+spawn(function()
+    while wait(.1) do
+        if _G.BringMode then
+            pcall(function()
+                if _G.BringMode == "Low" then
+                    _G.BringMode = 300
+                elseif _G.BringMode == "Normal" then
+                    _G.BringMode = 375
+                elseif _G.BringMode == "Super Bring" then
+                    _G.BringMode = 450
+                end
+            end)
+        end
+    end
+end)
+
+local Section = M:AddSection({
+    Name = "FastAttack :"
+})
+
+M:AddToggle({
+    Name = "FastAttack",
+    Default = true,
+    Flag = "FastAttack",
+    Save = false,
+    Callback = function(Value)
+        _G.FastAttack = Value
+    end    
+})
+local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+y = debug.getupvalues(CombatFrameworkR)[2]
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack then
+            if typeof(y) == "table" then
+                pcall(function()
+                    CameraShaker:Stop()
+                    y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+                    y.activeController.timeToNextAttack = 0
+                    y.activeController.hitboxMagnitude = 60
+                    y.activeController.active = false
+                    y.activeController.timeToNextBlock = 0
+                    y.activeController.focusStart = 1655503339.0980349
+                    y.activeController.increment = 1
+                    y.activeController.blocking = false
+                    y.activeController.attacking = false
+                    y.activeController.humanoid.AutoRotate = true
+                end)
+            end
+        end
+    end)
+end)
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack == true then
+            game.Players.LocalPlayer.Character.Stun.Value = 0
+            game.Players.LocalPlayer.Character.Busy.Value = false        
+        end
+    end)
+end)
+
+local AttackList = {"0", "0.1", "0.175", "0.2", "0.25", "0.3", "0.35", "0.4", "0.45", "0.5", "0.55", "0.6", "0.65", "0.7", "0.75", "0.8", "0.85", "0.9", "0.95", "0.1"}
+M:AddDropdown({
+	Name = "FastAttack Delay",
+	Default = "0.5",
+	Options = AttackList,
+    Flag = "FastAttack Delay",
+    Save = true,
+	Callback = function(Value)
+		_G.FastAttackDelay = Value
+	end    
+})
+spawn(function()
+    while wait(.1) do
+        if _G.FastAttackDelay then
+            pcall(function()
+                if _G.FastAttackDelay == "0" then
+                    _G.FastAttackDelay = 0
+                elseif _G.FastAttackDelay == "0.1" then
+                    _G.FastAttackDelay = 0.1
+                elseif _G.FastAttackDelay == "0.175" then
+                    _G.FastAttackDelay = 0.175
+                elseif _G.FastAttackDelay == "0.2" then
+                    _G.FastAttackDelay = 0.2
+                elseif _G.FastAttackDelay == "0.25" then
+                    _G.FastAttackDelay = 0.25
+                elseif _G.FastAttackDelay == "0.3" then
+                    _G.FastAttackDelay = 0.3
+                elseif _G.FastAttackDelay == "0.35" then
+                    _G.FastAttackDelay = 0.35
+                elseif _G.FastAttackDelay == "0.4" then
+                    _G.FastAttackDelay = 0.5
+                elseif _G.FastAttackDelay == "0.45" then
+                    _G.FastAttackDelay = 0.45
+                elseif _G.FastAttackDelay == "0.5" then
+                    _G.FastAttackDelay = 0.5
+                elseif _G.FastAttackDelay == "0.55" then
+                    _G.FastAttackDelay = 0.55
+                elseif _G.FastAttackDelay == "0.6" then
+                    _G.FastAttackDelay = 0.6
+                elseif _G.FastAttackDelay == "0.65" then
+                    _G.FastAttackDelay = 0.65
+                elseif _G.FastAttackDelay == "0.7" then
+                    _G.FastAttackDelay = 0.7
+                elseif _G.FastAttackDelay == "0.75" then
+                    _G.FastAttackDelay = 0.75
+                elseif _G.FastAttackDelay == "0.8" then
+                    _G.FastAttackDelay = 0.8
+                elseif _G.FastAttackDelay == "0.85" then
+                    _G.FastAttackDelay = 0.85
+                elseif _G.FastAttackDelay == "0.9" then
+                    _G.FastAttackDelay = 0.9
+                elseif _G.FastAttackDelay == "0.95" then
+                    _G.FastAttackDelay = 0.95
+                elseif _G.FastAttackDelay == "1" then
+                    _G.FastAttackDelay = 1
+                end
+            end)
+        end
+    end
+end)
+
+local Section = M:AddSection({
+    Name = "Bypass Teleport"
+})
+
+M:AddToggle({
+    Name = "Bypass TP[BETA]",
+    Default = fspawn(function()
+        while wait() do
+            pcall(function()
+                localrace:Set("Race :".." "..game:GetService("Players").LocalPlayer.Data.Race.Value)
+            end)
+        end
+    end)
+    
+    local localbeli = W:AddLabel("Beli")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbeli:Set("Beli :".." "..game:GetService("Players").LocalPlayer.Data.Beli.Value)
+            end)
+        end
+    end)
+    local localfrag = W:AddLabel("Fragment")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localfrag:Set("Fragments :".." "..game:GetService("Players").LocalPlayer.Data.Fragments.Value)
+            end)
+        end
+    end)
+    
+    
+    local localexp = W:AddLabel("ExP")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localexp:Set("ExP Points :".." "..game:GetService("Players").LocalPlayer.Data.Exp.Value)
+            end)
+        end
+    end)
+    
+    local localstat = W:AddLabel("Stats Points")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localstat:Set("Stats Points :".." "..game:GetService("Players").LocalPlayer.Data.Points.Value)
+            end)
+        end
+    end)
+    
+    local localbountyhornor = W:AddLabel("Bounty")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbountyhornor:Set("Bounty / Honor :".." "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
+            end)
+        end
+    end)
+    
+    local localDevil = W:AddLabel("Devil Fruit")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) then
+                    localDevil:Set("Devil Fruit :".." "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
+                else
+                    localDevil:Set("Not Have Devil Fruit")
+                end
+            end)
+        end
+    end)
+
+    local Section = W:AddSection({
+        Name = "Status Hack"
+    })
+    
+    local LevelFarmFarm W:AddLabel("Kaitun: Coming Soon")
+    W:AddLabel("Config Save : Comming Son...")
+    local Farmfast = W:AddLabel("Farm Fast : ❌")
+    local Bypass = W:AddLabel("Bypass ❌")
+    local Section = W:AddSection({
+        Name = "World"
+    })
+    local WolrdSet3 = W:AddLabel("World 1 ❌ ")
+    local WolrdSet = W:AddLabel("Wolrd : 2 ❌")
+    local WolrdSet1 = W:AddLabel("Wolrd : 3 ❌")
+    local Section = W:AddSection({
+        Name = "Stats Point"
+    })
+    local StastMelee = W:AddLabel("")
+    local StastDefense = W:AddLabel("")
+    local StastSword = W:AddLabel("")
+    local StastGun = W:AddLabel("")
+    local StastDevilFruit = W:AddLabel("")
+    local PointsStast = W:AddLabel("")
+    local Section = W:AddSection({
+        Name = "Melee Check"
+    })
+    local  Superhuman =             W:AddLabel("❌ : Superhuman")
+    local  DeathStep =              W:AddLabel("❌ : Sharkman Karate")
+    local  ElectricClaw =             W:AddLabel("❌ : Electric Claw")
+    local  DragonTalon =             W:AddLabel("❌ : Dragon Talon")
+    local   GodHuman =            W:AddLabel("❌ : God Human")
+    local Section = W:AddSection({
+        Name = "Sword Legend Check"
+    })
+    local   Shisui =            W:AddLabel("❌ : Shisui")
+    local     Saddi =           W:AddLabel("❌ : Saddi")
+    local      Wando =         W:AddLabel("❌ : Wando")
+    local     TrueTripleKatana          W:AddLabel("❌ : True Triple Katana")
+    local Section = W:AddSection({
+        Name = "World 1 Weapon"
+    })
+    local   Saber  = W:AddLabel("❌ : Saber")
+    local Section = W:AddSection({
+        Name = "World 2 Weapon"
+    })
+    local       Rengoku =         W:AddLabel("❌ : Rengoku")
+    local    MidnightBlade =            W:AddLabel("❌ : Midnight Blade")
+    local       DragonTrident =        W:AddLabel("❌ : DragonTrident")
+    local Section = W:AddSection({
+        Name = "World 3 Weapon"
+    })
+    local     Yama =          W:AddLabel("❌ : Yama")
+    local        BuddySword =        W:AddLabel("❌ : Buddy Sword")
+    local       Canvander =        W:AddLabel("❌ : Canvander")
+    local      TwinHooks =         W:AddLabel("❌ : Twin Hooks")
+    local     SpikeyTrident =          W:AddLabel("❌ : Spikey Trident")
+    local   HallowScythe =            W:AddLabel("❌ : Hallow Scythe")
+    local     DarkDagger =           W:AddLabel("❌ : Dark Dagger")
+    local     Tushita          W:AddLabel("❌ : Tushita")
+    local Section = W:AddSection({
+        Name = "Gun"
+    })
+    local   Kabucha =            W:AddLabel("❌ : Kabucha")
+    local   AcidumRifle =             W:AddLabel("❌ : Acidum Rifle")
+    local    BizarreRifle =            W:AddLabel("❌ : Bizarre Rifle")
+    local Section = W:AddSection({
+        Name = "Quest"
+    })
+    local   BartiloQuest =            W:AddLabel("❌ : Bartilo Quest")
+    local   DonSwanQuest =             W:AddLabel("❌ : Don Swan Quest")
+    local    KillDonSwan =           W:AddLabel("❌ : Kill Don Swan")
+
+
+local Section = W:AddSection({
+    Name = "Acessory"
+})
+
+
+local Dark_Coat = W:AddLabel("❌: Dark Coat")
+local Ghoul_Mask = W:AddLabel("❌: Ghoul Mask")
+local Swan_Glass = W:AddLabel("❌: Swan Glass")
+local Pale_Scarf = W:AddLabel("❌: Pale Scarf")
+local Valkyrie_Helm = W:AddLabel("❌: Valkyrie Helm")
+
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+                if v.Name == "Saber" then
+                    Dark_Coat:Set("✅: Dark Coat")
+                end
+                if v.Name == "Ghoul Mask" then
+                    Ghoul_Mask:Set("✅: Ghoul Mask")
+                end
+                if v.Name == "Swan Glasses" then
+                    Swan_Glass:Set("✅: Swan Glass")
+                end
+                if v.Name == "Pale Scarf" then
+                    Pale_Scarf:Set("✅: Pale Scarf")
+                end
+                if v.Name == "Valkyrie Helmet" then
+                    Valkyrie_Helm:Set("✅: Valkyrie Helmet")
+                end
+            end
+        end)
+    end
+end)
+
+local Section = M:AddSection({
+    Name = "Select Weapon"
+})
+
+M:AddParagraph("Select Weapon","Please Select Weapon")
+
+local WeaponList = {"Melee","Sword","Fruit","Gun"}
+_G.SelectWeapon = "Melee"
+M:AddDropdown({
+    Name = "Select Weapon",
+    Default = "",
+    Options = WeaponList,
+    Flag = "Select Weapon",
+    Save = true,
+    Callback = function(Value)
+        _G.SelectWeapon = Value
+    end    
+})
+task.spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.SelectWeapon == "Melee" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Melee" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Sword" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Sword" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Gun" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Gun" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            elseif _G.SelectWeapon == "Fruit" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ToolTip == "Blox Fruit" then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                            _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            end
+        end)
+    end
+    end)
+
+if World2 and World1 then
+    local Section = M:AddSection({
+        Name = "BOOTS"
+    })
+
+    M:AddButton({
+        Name = "BOOST FPS",
+        Callback = function()
+            pcall(function()
+                game:GetService("Lighting").FantasySky:Destroy()
+                local g = game
+                local w = g.Workspace
+                local l = g.Lighting
+                local t = w.Terrain
+                t.WaterWaveSize = 0
+                t.WaterWaveSpeed = 0
+                t.WaterReflectance = 0
+                t.WaterTransparency = 0
+                l.GlobalShadows = false
+                l.FogEnd = 9e9
+                l.Brightness = 0
+                settings().Rendering.QualityLevel = "Level01"
+                for i, v in pairs(g:GetDescendants()) do
+                    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
+                        v.Material = "Plastic"
+                        v.Reflectance = 0
+                    elseif v:IsA("Decal") or v:IsA("Texture") then
+                        v.Transparency = 1
+                    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+                        v.Lifetime = NumberRange.new(0)
+                    elseif v:IsA("Explosion") then
+                        v.BlastPressure = 1
+                        v.BlastRadius = 1
+                    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+                        v.Enabled = false
+                    elseif v:IsA("MeshPart") then
+                        v.Material = "Plastic"
+                        v.Reflectance = 0
+                        v.TextureID = 10385902758728957
+                    end
+                end
+                for i, e in pairs(l:GetChildren()) do
+                    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+                        e.Enabled = false
+                    end
+                end
+                for i, v in pairs(game:GetService("Workspace").Camera:GetDescendants()) do
+                    if v.Name == ("Water;") then
+                        v.Transparency = 1
+                        v.Material = "Plastic"
+                    end
+                end
+            end)
+          end    
+    })
+end
+
+    local Section = M:AddSection({
+        Name = "Other Farm"
+    })
+
+    M:AddParagraph("Redeem Code","Click to Button to Reddem All Code In Blox Fruits.")
+
+    local x2Code = {
+        "JULYUPDATE_RESET",
+        "staffbattle",
+        "Sub2CaptainMaui",
+        "SUB2GAMERROBOT_RESET1",
+        "KittGaming",
+        "Sub2Fer999",
+        "Enyu_is_Pro",
+        "Magicbus",
+        "ENYU_IS_PRO",
+        "FUDD10",
+        "BIGNEWS",
+        "THEGREATACE",
+        "SUB2GAMERROBOT_EXP1",
+        "STRAWHATMAIME",
+        "SUB2OFFICIALNOOBIE",
+        "SUB2NOOBMASTER123",
+        "SUB2DAIGROCK",
+        "AXIORE",
+        "TANTAIGAMIMG",
+        "STRAWHATMAINE",
+        "JCWK",
+        "FUDD10_V2",
+        "SUB2FER999",
+        "MAGICBIS",
+        "TY_FOR_WATCHING",
+        "STARCODEHEO"
+    }
+    
+    
+    
+    M:AddButton({
+        Name = "Redeem all code",
+        Callback = function()
+            function RedeemCode(value)
+                game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
+            end
+            for i,v in pairs(x2Code) do
+                RedeemCode(v)
+            end
+          end    
+    })
+
+    local Section = M:AddSection({
+        Name = "Auto Farm Level"
+    })
+
+
+M:AddParagraph("Main Farm","Click to Box to Farm, I ready update new mob farm!.")
+
+ToggleFarm = M:AddToggle({
+    Name = "Auto Farm",
+    Default = false,
+    Flag = "LevelFarm",
+    Save = true,
+    Callback = function(Value)
+        _G.AutoFarm = Value
+        StopTween(_G.AutoFarm)
+    end    
+})
+
+local Section = M:AddSection({
+    Name = "Mastery Menu"
+})
+
+M:AddParagraph("Mastery Menu","Click To Box to Start Farm Mastery")
+
+M:AddToggle({
+    Name = "Auto Farm BF Mastery",
+    Default = false,
+    Flag = "Mastery",
+    Save = true,
+    Callback = function(Value)
+        _G.AutoFarmFruitMastery = Value
+        StopTween(_G.AutoFarmFruitMastery)
+        if _G.AutoFarmFruitMastery == false then
+            UseSkill = false 
+        end
+    end    
+})
+
+M:AddToggle({
+    Name = "Auto Farm Gun Mastery",
+    Default = false,
+    Flag = "Gun Mastery",
+    Save = true,
+    Callback = function(Value)
+        _G.AutoFarmGunMastery = Value
+        StopTween(_G.AutoFarmGunMastery)
+    end    
+})
+local localbeli = W:AddLabel("Beli")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbeli:Set("Beli :".." "..game:GetService("Players").LocalPlayer.Data.Beli.Value)
+            end)
+        end
+    end)
+    local localfrag = W:AddLabel("Fragment")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localfrag:Set("Fragments :".." "..game:GetService("Players").LocalPlayer.Data.Fragments.Value)
+            end)
+        end
+    end)
+    
+    
+    local localexp = W:AddLabel("ExP")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localexp:Set("ExP Points :".." "..game:GetService("Players").LocalPlayer.Data.Exp.Value)
+            end)
+        end
+    end)
+    
+    local localstat = W:AddLabel("Stats Points")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localstat:Set("Stats Points :".." "..game:GetService("Players").LocalPlayer.Data.Points.Value)
+            end)
+        end
+    end)
+    
+    local localbountyhornor = W:AddLabel("Bounty")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbountyhornor:Set("Bounty / Honor :".." "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
+            end)
+        end
+    end)
+    
+    local localDevil = W:AddLabel("Devil Fruit")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value) then
+                    localDevil:Set("Devil Fruit :".." "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
+                else
+                    localDevil:Set("Not Have Devil Fruit")
+                end
+            end)
+        end
+    end)
+
+    local Section = W:AddSection({
+        Name = "Status Hack"
+    })
+    
+    local LevelFarmFarm W:AddLabel("Kaitun: Coming Soon")
+    W:AddLabel("Config Save : Comming Son...")
+    local Farmfast = W:AddLabel("Farm Fast : ❌")
+    local Bypass = W:AddLabel("Bypass ❌")
+    local Section = W:AddSection({
+        Name = "World"
+    })
+    local WolrdSet3 = W:AddLabel("World 1 ❌ ")
+    local WolrdSet = W:AddLabel("Wolrd : 2 ❌")
+    local WolrdSet1 = W:AddLabel("Wolrd : 3 ❌")
+    local Section = W:AddSection({
+        Name = "Stats Point"
+    })
+    local StastMelee = W:AddLabel("")
+    local StastDefense = W:AddLabel("")
+    local StastSword = W:AddLabel("")
+    local StastGun = W:AddLabel("")
+    local StastDevilFruit = W:AddLabel("")
+    local PointsStast = W:AddLabel("")
+    local Section = W:AddSection({
+        Name = "Melee Check"
+    })
+    local  Superhuman =             W:AddLabel("❌ : Superhuman")
+    local  DeathStep =              W:AddLabel("❌ : Sharkman Karate")
+    local  ElectricClaw =             W:AddLabel("❌ : Electric Claw")
+    local  DragonTalon =             W:AddLabel("❌ : Dragon Talon")
+    local   GodHuman =            W:AddLabel("❌ : God Human")
+    local Section = W:AddSection({
+        Name = "Sword Legend Check"
+    })
+    local   Shisui =            W:AddLabel("❌ : Shisui")
+    local     Saddi =           W:AddLabel("❌ : Saddi")
+    local      Wando =         W:AddLabel("❌ : Wando")
+    local     TrueTripleKatana          W:AddLabel("❌ : True Triple Katana")
+    local Section = W:AddSection({
+        Name = "World 1 Weapon"
+    })
+    local   Saber  = W:AddLabel("❌ : Saber")
+    local Section = W:AddSection({
+        Name = "World 2 Weapon"
+    })
+    local       Rengoku =         W:AddLabel("❌ : Rengoku")
+    local    MidnightBlade =            W:AddLabel("❌ : Midnight Blade")
+    local       DragonTrident =        W:AddLabel("❌ : DragonTrident")
+    local Section = W:AddSection({
+        Name = "World 3 Weapon"
+    })
+    local     Yama =          W:AddLabel("❌ : Yama")
+    local        BuddySword =        W:AddLabel("❌ : Buddy Sword")
+    local       Canvander =        W:AddLabel("❌ : Canvander")
+    local      TwinHooks =         W:AddLabel("❌ : Twin Hooks")
+    local     SpikeyTrident =          W:AddLabel("❌ : Spikey Trident")
+    local   HallowScythe =            W:AddLabel("❌ : Hallow Scythe")
+    local     DarkDagger =           W:AddLabel("❌ : Dark Dagger")
+    local     Tushita          W:AddLabel("❌ : Tushita")
+    local Section = W:AddSection({
+        Name = "Gun"
+    })
+    local   Kabucha =            W:AddLabel("❌ : Kabucha")
+    local   AcidumRifle =             W:AddLabel("❌ : Acidum Rifle")
+    local    BizarreRifle =            W:AddLabel("❌ : Bizarre Rifle")
+    local Section = W:AddSection({
+        Name = "Quest"
+    })
+    local   BartiloQuest =            W:AddLabel("❌ : Bartilo Quest")
+    local   DonSwanQuest =             W:AddLabel("❌ : Don Swan Quest")
+    local    KillDonSwan =           W:AddLabel("❌ : Kill Don Swan")
+
+
+local Section = W:AddSection({
+    Name = "Acessory"
+})
+
+
+local Dark_Coat = W:AddLabel("❌: Dark Coat")
+local Ghoul_Mask = W:AddLabel("❌: Ghoul Mask")
+local Swan_Glass = W:AddLabel("❌: Swan Glass")
+local Pale_Scarf = W:AddLabel("❌: Pale Scarf")
+local Valkyrie_Helm = W:AddLabel("❌: Valkyrie Helm")
+
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+                if v.Name == "Saber" then
+                    Dark_Coat:Set("✅: Dark Coat")
+                end
+                if v.Name == "Ghoul Mask" then
+                    Ghoul_Mask:Set("✅: Ghoul Mask")
+                end
+                if v.Name == "Swan Glasses" then
+                    Swan_Glass:Set("✅: Swan Glass")
+                end
+                if v.Name == "Pale Scarf" then
+                    Pale_Scarf:Set("✅: Pale Scarf")
+                end
+                if v.Name == "Valkyrie Helmet" then
+                    Valkyrie_Helm:Set("✅: Valkyrie Helmet")
+                end
+            end
+        end)
+    end
+end)
+spawn(function()
+        while wait() do
+            pcall(function()
+                localbeli:Set("Beli :".." "..game:GetService("Players").LocalPlayer.Data.Beli.Value)
+            end)
+        end
+    end)
+    local localfrag = W:AddLabel("Fragment")
     function MoonTextureId()
         if Sea1 then
             return game:GetService("Lighting").FantasySky.MoonTextureId
@@ -2718,6 +4138,195 @@ spawn(function()
         end
     end
 
+    function CheckMoon()
+		moon8 = "http://www.roblox.com/asset/?id=9709150401"
+		moon7 = "http://www.roblox.com/asset/?id=9709150086"
+		moon6 = "http://www.roblox.com/asset/?id=9709149680"
+		moon5 = "http://www.roblox.com/asset/?id=9709149431"
+		moon4 = "http://www.roblox.com/asset/?id=9709149052"
+		moon3 = "http://www.roblox.com/asset/?id=9709143733"
+		moon2 = "http://www.roblox.com/asset/?id=9709139597"
+		moon1 = "http://www.roblox.com/asset/?id=9709135895"
+		moonreal = MoonTextureId()
+		cofullmoonkothangbeo = "Bad Moon"
+		if moonreal == moon5 or moonreal == moon4 then
+			if moonreal == moon5 then
+				cofullmoonkothangbeo = "Full Moon"
+			elseif moonreal == moon4 then
+				cofullmoonkothangbeo = "Next Night"
+			end
+		end
+		return cofullmoonkothangbeo
+	end
+	function getBlueGear()
+		if game.workspace.Map:FindFirstChild("MysticIsland") then
+			for r, v in pairs(game.workspace.Map.MysticIsland:GetChildren()) do
+				if v:IsA("MeshPart") and v.MeshId == "rbxassetid://10153114969" then
+					return v
+				end
+			end
+		end
+	end
+	function getHighestPoint()
+		if not game.workspace.Map:FindFirstChild("MysticIsland") then
+			return nil
+		end
+		for r, v in pairs(game:GetService("Workspace").Map.MysticIsland:GetDescendants()) do
+			if v:IsA("MeshPart") then
+				if v.MeshId == "rbxassetid://6745037796" then
+					return v
+				end
+			end
+		end
+	end
+	spawn(function()
+        if TwenetoHighestPoint then
+		HighestPoint = getHighestPoint()
+		if HighestPoint then
+			topos(HighestPoint.CFrame * CFrame.new(0, 211.88, 0))
+		end
+    end
+	end)
+	function MoveCamtoMoon()
+		workspace.CurrentCamera.CFrame =
+			CFrame.new(
+			workspace.CurrentCamera.CFrame.Position,
+			game:GetService("Lighting"):GetMoonDirection() + workspace.CurrentCamera.CFrame.Position
+		)
+	end
+
+	spawn(function()
+    if TweentoBlueGear then
+		BlueGear = getBlueGear()
+		if BlueGear then
+			topos(BlueGear.CFrame)
+		end
+    end
+	end)
+
+    local Client = game.Players.LocalPlayer
+    local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
+    local STOPRL = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)
+    spawn(function()
+        while task.wait() do
+            pcall(function()
+                if not shared.orl then shared.orl = STOPRL.wrapAttackAnimationAsync end
+                if not shared.cpc then shared.cpc = STOP.play end
+                    STOPRL.wrapAttackAnimationAsync = function(a,b,c,d,func)
+                    local Hits = STOPRL.getBladeHits(b,c,d)
+                    if Hits then
+                        if _G.FastAttack then
+                            STOP.play = function() end
+                            a:Play(0.01,0.01,0.01)
+                            func(Hits)
+                            STOP.play = shared.cpc
+                            wait(a.length * 0.5)
+                            a:Stop()
+                        else
+                            a:Play()
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+
+function GetBladeHit()
+    local CombatFrameworkLib = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))
+    local CmrFwLib = CombatFrameworkLib[2]
+    local p13 = CmrFwLib.activeController
+    local weapon = p13.blades[1]
+    if not weapon then 
+        return weapon
+    end
+    while weapon.Parent ~= game.Players.LocalPlayer.Character do
+        weapon = weapon.Parent 
+    end
+    return weapon
+end
+function AttackHit()
+    local CombatFrameworkLib = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))
+    local CmrFwLib = CombatFrameworkLib[2]
+    local plr = game.Players.LocalPlayer
+    for i = 1, 1 do
+        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(plr.Character,{plr.Character.HumanoidRootPart},60)
+        local cac = {}
+        local hash = {}
+        for k, v in pairs(bladehit) do
+            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
+                table.insert(cac, v.Parent.HumanoidRootPart)
+                hash[v.Parent] = true
+            end
+        end
+        bladehit = cac
+        if #bladehit > 0 then
+            pcall(function()
+                CmrFwLib.activeController.timeToNextAttack = 1
+                CmrFwLib.activeController.attacking = false
+                CmrFwLib.activeController.blocking = false
+                CmrFwLib.activeController.timeToNextBlock = 0
+                CmrFwLib.activeController.increment = 3
+                CmrFwLib.activeController.hitboxMagnitude = 120
+                CmrFwLib.activeController.focusStart = 0
+                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetBladeHit()))
+                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "")
+            end)
+        end
+    end
+end
+spawn(function()
+    while wait(.1) do
+        if _G.FastAttack then
+            pcall(function()
+                repeat task.wait(_G.FastAttackDelay)
+                    AttackHit()
+                until not _G.FastAttack
+            end)
+        end
+    end
+end)
+
+local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
+CamShake:Stop()
+
+    HttpService = game:GetService("HttpService")
+    local i = "Sla Hub"
+    local j = "-BloxFruit.json"
+    local l = game.Players.LocalPlayer.Name .. j
+    if Adel then
+        HttpService = game:GetService("HttpService")
+        local i = "Sla Hub"
+        local j = "-BloxFruit.json"
+        local l = game.Players.LocalPlayer.Name .. j
+    end
+    function SaveSettings(m, n)
+        if m ~= nil then
+            h[m] = n
+        end
+        HttpService = game:GetService("HttpService")
+        if not isfolder(i) then
+            makefolder(i)
+        end
+        writefile(i .. "/" .. l, HttpService:JSONEncode(h))
+    end
+    function ReadSetting()
+        local s, o =
+            pcall(
+            function()
+                HttpService = game:GetService("HttpService")
+                if not isfolder(i) then
+                    makefolder(i)
+                end
+                return HttpService:JSONDecode(readfile(i .. "/" .. l))
+            end
+        )
+        if s then
+            return o
+        else
+            SaveSettings()
+            return ReadSetting()
+        end
+    end
     function CheckMoon()
         moon8 = "http://www.roblox.com/asset/?id=9709150401"
         moon7 = "http://www.roblox.com/asset/?id=9709150086"
